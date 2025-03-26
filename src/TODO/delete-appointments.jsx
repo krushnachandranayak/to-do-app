@@ -11,7 +11,7 @@ export function DeleteAppointment() {
         .then(response=>{
              setAppointment(response.data)
         })
-    },[])
+    },[param.id])
     function handleDeleteClick(){
         axios.delete(`https://to-do-json-server.onrender.com/appoinments/${param.id}`)
         .then(()=>{

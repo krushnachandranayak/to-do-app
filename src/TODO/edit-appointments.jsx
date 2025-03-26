@@ -31,7 +31,7 @@ export function EditAppointment() {
             .then(response => {
                 setAppointment(response.data);
             })
-    }, [])
+    }, [params.id])
 
     return (
         <div className="container bg-light w-50 p-4">

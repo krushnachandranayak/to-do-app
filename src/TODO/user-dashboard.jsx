@@ -1,12 +1,13 @@
 import { Alert, AlertTitle } from "@mui/material";
 import axios from "axios";
+import { param } from "jquery";
 import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 export function UserDashborad() {
     
-    const [cookies, setCookie, removeCookie] = useCookies(['userid']);
+    const [cookies,removeCookie] = useCookies(['userid']);
     let navigate=useNavigate();
     const [appoinments, setAppoinments] = useState([{ id: 0, title: '', date: '', userid: '' }])
     useEffect(() => {
@@ -15,7 +16,7 @@ export function UserDashborad() {
                 let user_appointments = response.data.filter(appoinment => appoinment.userid === cookies['userid']);
                 setAppoinments(user_appointments)
             })
-    },[]);
+    },[param.id]);
     function handleSignout(){
         removeCookie('userid');
         navigate('/');
