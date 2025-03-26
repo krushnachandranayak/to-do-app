@@ -8,7 +8,7 @@ export function ToDoLogin() {
     let navigate = useNavigate();
     
 
-    const [cookies, setCookie, removeCookie] = useCookies(['userid']);
+    const [, setCookie] = useCookies(['userid']);
 
     const formik = useFormik({
         initialValues: {
