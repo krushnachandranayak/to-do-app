@@ -17,7 +17,7 @@ export function EditAppointment() {
             userid: appointment.userid
         },
         onSubmit: (appointment) => {
-            axios.put(`http://localhost:5000/appoinments/${params.id}`, appointment)
+            axios.put(`https://to-do-json-server.onrender.com/appoinments/${params.id}`, appointment)
                 .then(() => {
                     console.log('saved');
                 })
@@ -27,7 +27,7 @@ export function EditAppointment() {
     })
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/appoinments/${params.id}`)
+        axios.get(`https://to-do-json-server.onrender.com/appoinments/${params.id}`)
             .then(response => {
                 setAppointment(response.data);
             })

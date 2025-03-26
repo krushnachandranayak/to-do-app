@@ -18,7 +18,7 @@ export function AddAppointment() {
             date: yup.date().required("Date is required")
         }), 
         onSubmit:(appoinment)=>{
-            axios.post(`http://localhost:5000/appoinments`,appoinment)
+            axios.post(`https://to-do-json-server.onrender.com/appoinments`,appoinment)
             .then(()=>{
                 console.log("appoinment added");
             })

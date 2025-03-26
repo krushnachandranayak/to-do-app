@@ -7,13 +7,13 @@ export function DeleteAppointment() {
     let navigate=useNavigate();
     const [appointment, setAppointment] = useState({id:0, title:'', date:'', userid:''});
     useEffect(()=>{
-        axios.get(`http://localhost:5000/appoinments/${param.id}`)
+        axios.get(`https://to-do-json-server.onrender.com/appoinments/${param.id}`)
         .then(response=>{
              setAppointment(response.data)
         })
     },[])
     function handleDeleteClick(){
-        axios.delete(`http://localhost:5000/appoinments/${param.id}`)
+        axios.delete(`https://to-do-json-server.onrender.com/appoinments/${param.id}`)
         .then(()=>{
             console.log("Deleted");
         })
