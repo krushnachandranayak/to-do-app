@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "id": "c57c",
+      "userid": "Biswajit",
+      "password": "Biswajit@123",
+      "email": "biswajitmahankuda9@gmail.com"
+    },
+    {
+      "id": "ce2a",
+      "userid": "Sunil",
+      "userPwd": "Sunil@1",
+      "userEmail": "suman27@gmail.com"
+    },
+    {
+      "id": "0211",
+      "userid": "Banty",
+      "userPwd": "Banty@1",
+      "userEmail": "banty@gmail.com"
+    },
+    {
+      "id": "1b7a",
+      "userid": "Krushna",
+      "userPwd": "Krushna@123",
+      "userEmail": "krushna@gmail.com"
+    }
+  ],
+  "appoinments": [
+    {
+      "id": "e37d",
+      "title": "Admin Layer",
+      "date": "2025-03-04",
+      "userid": "Biswajit"
+    },
+    {
+      "id": "a172",
+      "title": "Backend Layer",
+      "date": "2025-03-04",
+      "userid": "Sunil"
+    },
+    {
+      "id": "7f05",
+      "title": "Cloud Computing management",
+      "date": "2025-02-25",
+      "userid": "Sunil"
+    },
+    {
+      "id": "8b92",
+      "title": "Forntend Developer",
+      "date": "2025-03-04",
+      "userid": "Banty"
+    },
+    {
+      "id": "8bae",
+      "title": "MERN Stack Develper",
+      "date": "2025-03-12",
+      "userid": "Banty"
+    },
+    {
+      "id": "4568",
+      "title": "React Developer",
+      "date": "2025-03-04",
+      "userid": "Banty"
+    },
+    {
+      "id": "a74c",
+      "title": "Python developer",
+      "date": "2025-03-27",
+      "userid": "Sunil"
+    },
+    {
+      "id": "1713",
+      "title": "React.js",
+      "date": "2025-11-20",
+      "userid": "Krushna"
+    },
+    {
+      "id": "f57c",
+      "title": "Node.js",
+      "date": "2025-04-05",
+      "userid": "Krushna"
+    }
+  ]
+}
