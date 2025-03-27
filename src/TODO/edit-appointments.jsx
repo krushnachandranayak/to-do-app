@@ -43,7 +43,7 @@ export function EditAppointment() {
                     <dt>Date</dt>
                     <dd><input type="date" onChange={formik.handleChange} value={formik.values.date} name="date"/></dd>
                 </dl>
-                <button className="btn btn-success mx-2">Save</button>
+                <button className="btn btn-success mx-2" type="submit">Save</button>
                 <Link to="/dashboard" className="btn btn-warning">Cancel</Link>
             </form>
         </div>

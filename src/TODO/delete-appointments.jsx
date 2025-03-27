@@ -23,7 +23,7 @@ export function DeleteAppointment() {
         <div className="container bg-light w-50 p-4">
             <h3>Delete Appointment</h3>
             <h5 className="my-3">Are you sure want to delete? <br /> <span className="text-danger my-3">{appointment.title}</span> </h5>
-            <button onClick={handleDeleteClick} className="btn btn-danger mx-2">Yes</button>
+            <button onClick={handleDeleteClick} className="btn btn-danger mx-2" type="submit">Yes</button>
             <Link to="/dashboard" className="btn btn-warning">Cancel</Link>
         </div>
     )
