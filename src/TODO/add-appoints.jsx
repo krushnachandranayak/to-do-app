@@ -1,13 +1,12 @@
 import axios from "axios"
 import { useFormik } from "formik"
-// Removed unused import
 import {useCookies } from "react-cookie"
 import { Link, useNavigate } from "react-router-dom"
 import * as yup from "yup"; 
 
 export function AddAppointment() {
     let navigate=useNavigate();
-    const [cookies] = useCookies(['userid']); // Removed unused variable 'removeCookie'
+    const[cookies]=useCookies(['userid'])
     const formik=useFormik({
         initialValues:{
             title:'',

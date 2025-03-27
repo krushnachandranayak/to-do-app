@@ -10,14 +10,19 @@ export function DeleteAppointment() {
         axios.get(`https://to-do-json-server.onrender.com/appoinments/${param.id}`)
         .then(response=>{
              setAppointment(response.data)
+        }).catch(error=>{
+            console.log("Error fetching appointment:", error);
         })
     },[param.id])
     function handleDeleteClick(){
         axios.delete(`https://to-do-json-server.onrender.com/appoinments/${param.id}`)
         .then(()=>{
             console.log("Deleted");
+            navigate('/dashboard');
         })
-      navigate('/dashboard');
+        .catch(error=>{
+            console.log("Error deleting appointment:", error);
+        })
     }
     return (
         <div className="container bg-light w-50 p-4">

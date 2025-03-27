@@ -5,37 +5,41 @@ import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 
 export function UserDashboard() {
-    const [cookies, removeCookie] = useCookies(['userid']);
-    let navigate = useNavigate();
-    const [appointments, setAppointments] = useState([]);
+    const [cookies, removeCookie] = useCookies(["userid"]);
+    const navigate = useNavigate();
+    const [appointments, setAppointments] = useState([{id: 0, title: '', date: '', userid: ''}]);
 
-    // Memoized function to prevent unnecessary re-renders
+    const userId = cookies.userid; // Extracted for cleaner dependencies
+
+    // Fetch Appointments
     const fetchAppointments = useCallback(() => {
-        const userId = cookies.userid;
         if (!userId) return;
 
-        axios.get(`https://to-do-json-server.onrender.com/appoinments`)
-            .then(response => {
-                let userAppointments = response.data.filter(appointment => appointment.userid === userId);
+        axios
+            .get(`https://to-do-json-server.onrender.com/appoinments`)
+            .then((response) => {
+                let userAppointments = response.data.filter(
+                    (appointment) => appointment.userid === userId
+                );
                 setAppointments(userAppointments);
             })
-            .catch(error => console.error("Error fetching appointments:", error));
-    }, [cookies.userid]); // Only re-create when userid changes
+            .catch((error) => console.error("Error fetching appointments:", error));
+    }, [userId]);
 
-    // Fetch appointments when component mounts or user changes
     useEffect(() => {
         fetchAppointments();
-    }, [fetchAppointments]); // Now ESLint won't complain
+    }, [fetchAppointments]);
 
+    // Handle Signout
     function handleSignout() {
-        removeCookie('userid');
-        navigate('/');
+        removeCookie("userid");
+        navigate("/");
     }
 
     return (
         <div className="container bg-light w-50 p-4">
             <h5 className="d-flex justify-content-between">
-                <span>{cookies.userid} - </span>
+                <span>{userId} - </span>
                 <span>Dashboard</span>
                 <span><button className="btn btn-danger" onClick={handleSignout}>Signout</button></span>
             </h5>
@@ -49,11 +53,9 @@ export function UserDashboard() {
                             <p className="text-primary">{appointment.date}</p>
                             <div>
                                 <Link className="bi bi-pen-fill btn btn-warning" 
-                                      to={`/edit-appointment/${appointment.id}`} 
-                                      onClick={fetchAppointments} />
+                                      to={`/edit-appointment/${appointment.id}`} />
                                 <Link className="bi bi-trash-fill btn btn-danger mx-2" 
-                                      to={`/delete-appointment/${appointment.id}`} 
-                                      onClick={fetchAppointments} />
+                                      to={`/delete-appointment/${appointment.id}`} />
                             </div>
                         </Alert>
                     ))

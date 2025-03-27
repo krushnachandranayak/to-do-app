@@ -63,7 +63,7 @@ export function ToDoLogin() {
                         />
                     </dd>
                 </dl>
-                <button className="btn btn-warning">Login</button>
+                <button className="btn btn-warning" type="submit">Login</button>
                 <p className="mt-4">
                     New User? <Link to="/register">Register</Link>
                 </p>
