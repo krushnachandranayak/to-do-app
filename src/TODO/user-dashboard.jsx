@@ -18,7 +18,7 @@ export function UserDashboard() {
                 })
                 .catch(error => console.error("Error fetching appointments:", error));
         }
-    }, [cookies]);
+    }, [cookies['userid']]);
 
     function handleSignout() {
         removeCookie('userid');
