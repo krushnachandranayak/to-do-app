@@ -20,8 +20,11 @@ export function EditAppointment() {
             axios.put(`https://to-do-json-server.onrender.com/appoinments/${params.id}`, appointment)
                 .then(() => {
                     console.log('saved');
+                    navigate('/dashboard');
                 })
-            navigate('/dashboard');
+                .catch(error => {
+                    console.log("Error saving appointment:", error);
+                })
         },
         enableReinitialize: true
     })
@@ -30,6 +33,9 @@ export function EditAppointment() {
         axios.get(`https://to-do-json-server.onrender.com/appoinments/${params.id}`)
             .then(response => {
                 setAppointment(response.data);
+            })
+            .catch(error => {
+                console.log("Error fetching appointment:", error);
             })
     }, [params.id])
 

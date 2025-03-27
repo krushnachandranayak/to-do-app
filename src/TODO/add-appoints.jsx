@@ -21,8 +21,12 @@ export function AddAppointment() {
             axios.post(`https://to-do-json-server.onrender.com/appoinments`,appoinment)
             .then(()=>{
                 console.log("appoinment added");
+                navigate('/dashboard');
             })
-            navigate('/dashboard');
+            .catch(error=>{
+                console.log("Error adding appointment:",error);
+            })
+            
         }
     })
     return (
