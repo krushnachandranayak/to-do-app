@@ -21,10 +21,10 @@ export function ToDoIndex() {
                                 <Route path="/" element={<ToDoHome />}></Route>
                                 <Route path="register" element={<ToDoRegister />}></Route>
                                 <Route path="login" element={<ToDoLogin />}></Route>
-                                <Route path="dashborad" element={<UserDashboard/>}></Route>
+                                <Route path="dashboard" element={<UserDashboard/>}></Route>
                                 <Route path="add-appointment" element={<AddAppointment/>}></Route>
-                                <Route path="delete-appoinment/:id" element={<DeleteAppointment/>}></Route>
-                                <Route path="edit-appoinment/:id" element={<EditAppointment/>}></Route> 
+                                <Route path="delete-appointment/:id" element={<DeleteAppointment/>}></Route>
+                                <Route path="edit-appointment/:id" element={<EditAppointment/>}></Route> 
                             </Routes>
                         </section>
                     </BrowserRouter>

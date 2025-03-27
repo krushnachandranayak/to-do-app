@@ -23,7 +23,7 @@ export function AddAppointment() {
             .then(()=>{
                 console.log("appoinment added");
             })
-            navigate('/dashborad');
+            navigate('/dashboard');
         }
     })
     return (
@@ -41,7 +41,7 @@ export function AddAppointment() {
                     <dd className="text-danger">{formik.errors.date}</dd>
                 </dl>
                 <button type="submit" className="btn btn-success">Add</button>
-                <Link to="/dashborad" className="btn btn-warning mx-2">Cancel</Link>
+                <Link to="/dashboard" className="btn btn-warning mx-2">Cancel</Link>
             </form>
         </div>
     )

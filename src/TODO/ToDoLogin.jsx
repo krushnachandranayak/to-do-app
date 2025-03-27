@@ -22,7 +22,7 @@ export function ToDoLogin() {
                     if (userdetails) {
                         if (userdetails.userPwd === user.userPwd) {
                             setCookie('userid', userdetails.userid, { path: '/' });
-                            navigate('/dashborad');
+                            navigate('/dashboard');
                         } else {
                             alert("Invalid password");
                         }

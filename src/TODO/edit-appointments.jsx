@@ -21,7 +21,7 @@ export function EditAppointment() {
                 .then(() => {
                     console.log('saved');
                 })
-            navigate('/dashborad');
+            navigate('/dashboard');
         },
         enableReinitialize: true
     })
@@ -44,7 +44,7 @@ export function EditAppointment() {
                     <dd><input type="date" onChange={formik.handleChange} value={formik.values.date} name="date"/></dd>
                 </dl>
                 <button className="btn btn-success mx-2">Save</button>
-                <Link to="/dashborad" className="btn btn-warning">Cancel</Link>
+                <Link to="/dashboard" className="btn btn-warning">Cancel</Link>
             </form>
         </div>
     )
